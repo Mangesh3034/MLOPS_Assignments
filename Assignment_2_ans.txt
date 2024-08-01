@@ -1,0 +1,57 @@
+Question 1:
+
+class A1:
+    def name(self):
+        print("A1")
+
+class B1:
+    def name(self):
+        print("B1")
+
+class C1:
+    def name(self):
+        print("C1")
+
+class A2(A1, B1):
+    pass
+
+class B2(B1, C1):
+    pass
+
+class A3(A2, B2):
+    pass
+
+print(A3.mro())
+a3 = A3()
+a3.name()
+
+Output - A1
+
+
+Question 2:
+
+class Person:
+    def name(self):
+        print("Person")
+
+class Father(Person):
+    def name(self):
+        print("Father")
+
+class Mother(Person):
+    def name(self):
+        print("Mother")
+
+class Child1(Father, Mother, Person):
+    def name(self):
+        print("Child1")
+child1 = Child1()
+child1.name()
+
+class Child2(Father, Mother, Person):
+    pass 
+child2 = Child2()
+child2.name()
+
+Output - Child1
+	 Father
